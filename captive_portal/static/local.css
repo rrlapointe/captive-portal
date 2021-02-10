@@ -1,0 +1,6 @@
+/* Identical to Bootstrap's .alert-danger  */
+.alert-error {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+}

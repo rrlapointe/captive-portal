@@ -1,0 +1,11 @@
+{
+	"name": "captive-portal",
+	"version": "1.0.0",
+	"description": "Captive portal with SAML2 SSO for networks that use Ubiquiti UDM-Pro",
+	"license": "MIT",
+	"author": "Ryan LaPointe <ryan@ryanlapointe.org>",
+	"repository": "github:rrlapointe/captive-portal",
+	"dependencies": {
+		"bootstrap": "4.1.3"
+	}
+}

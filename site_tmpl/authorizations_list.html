@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<nav aria-label="breadcrumb">
+	<h1>{{ title }}</h1>
+	<p>
+		This is a historical log of successful authorizations performed through the captive portal.
+		It does not necessarily reflect the current state of the network controller's database.
+		For example, if an authorization were manually revoked in the network controller before its expiration date, that would not be indicated here.
+	</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>User</th>
+				<th>MAC Address</th>
+				<th>Timestamp</th>
+				<th>Expires</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for authorization in authorizations %}
+				<tr>
+					<td>{% if authorization.user %}{{ authorization.user.get_full_name }} &lt;{{ authorization.user.email }}&gt;{% else %}Guest{% endif %}</td>
+					<td>{{ authorization.mac_address }}</td>
+					<td>{{ authorization.timeago }}<br>{{ authorization.timestamp }}</td>
+					<td>{{ authorization.timeago_authorized_until }}<br>{{ authorization.authorized_until }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

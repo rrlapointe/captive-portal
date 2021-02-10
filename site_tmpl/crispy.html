@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-md-12">
+			<h1>{{ msg }}</h1>
+			{% if helper %}
+				{% crispy form helper %}
+			{% else %}
+				{% crispy form %}
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

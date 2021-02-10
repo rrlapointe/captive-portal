@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block container %}
+	<div class="container" style="max-width: 500px">
+		<div class="row">
+			<div class="col">
+				<h1>My Account</h1>
+				<p>Name: {{ user.get_full_name }}</p>
+				<p>Username: {{ user.username }}</p>
+				<a class="btn btn-block btn-primary" href="{% url 'password_change' %}">Change password</a>
+				<a class="btn btn-block btn-primary" href="{% url 'logout' %}">Log out</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

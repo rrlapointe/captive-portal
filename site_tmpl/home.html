@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Welcome</h1>
+	<ul>
+		<li><a href="{% url 'ui:guest_password' %}">Guest password</a></li>
+		<li><a href="{% url 'ui:netreg' %}">Register IoT device</a></li>
+		<li><a href="{% url 'ui:my_devices' %}">My Devices</a></li>
+		<li><a href="{% url 'ui:authorizations_list' %}">Access Log</a></li>
+		<li><a href="{% url 'myaccount' %}">My account</a></li>
+	</ul>
+{% endblock %}

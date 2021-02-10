@@ -1,0 +1,24 @@
+$primary: #992013;
+$secondary: #003287;
+$body-bg: #d9d9d9;
+$breadcrumb-bg: #00062d;
+$table-border-color: #00062d;
+$nav-tabs-border-color: #00062d;
+$nav-tabs-link-hover-border-color: $body-bg $body-bg #00062d;
+$nav-tabs-link-active-border-color: #00062d #00062d $body-bg;
+$nav-tabs-link-active-color: #00062d;
+$input-border-color: #6c757d;
+$input-color: #212529;
+$card-border-color: #6c757d;
+$font-family-sans-serif: Helvetica;
+
+.breadcrumb .breadcrumb-item a {
+	color: #d9d9d9;
+}
+
+.breadcrumb .breadcrumb-item.active{
+	color: #a1a1a1;
+}
+
+// This line must stay at the bottom
+@import "bootstrap/scss/bootstrap";
