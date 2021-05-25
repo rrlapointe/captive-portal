@@ -50,6 +50,43 @@ INSTALLED_APPS = [
 if SAML2_ENABLED:
 	INSTALLED_APPS.append('django_saml2_auth')
 
+LOGGING = {
+	'version': 1,
+	'disable_existing_loggers': False,
+	'filters': {
+		'require_debug_false': {
+			'()': 'django.utils.log.RequireDebugFalse'
+		}
+	},
+	'formatters': {
+		'console': {
+			'format': '%(asctime)s %(name)s [%(levelname)s] %(message)s'
+		}
+	},
+	'handlers': {
+		'mail_admins': {
+			'level': 'ERROR',
+			'filters': ['require_debug_false'],
+			'class': 'django.utils.log.AdminEmailHandler'
+		},
+		'console': {
+			'level': 'DEBUG' if DEBUG else 'INFO',
+			'formatter': 'console',
+			'class': 'logging.StreamHandler',
+		},
+	},
+	'loggers': {
+		'django': {
+			'level': 'INFO',
+			'handlers': ['console'],
+		},
+		'captive_portal': {
+			'level': 'DEBUG',
+			'handlers': ['console'],
+		},
+	}
+}
+
 MIDDLEWARE = (
 	'django.middleware.security.SecurityMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
