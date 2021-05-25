@@ -23,6 +23,7 @@ urlpatterns += [
 	path('accounts/profile/', views.account_profile, name='myaccount'),
 	path('guest/s/default/', views.landing, name='landing2'),
 	path('authorize_guest', views.authorize_guest, name='authorize_guest'),
+	path('success', views.success, name='success'),
 	path('ui/', include(([
 		path('', views.homepage, name='home'),
 		path('guest-password', views.guest_password, name='guest_password'),

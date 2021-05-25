@@ -77,7 +77,7 @@ def landing(request):
 		except ValidationError:
 			return HttpResponseBadRequest()
 		authorize(format_mac(models.Authorization.objects.get(pk=pk).mac_address, mac_unix_expanded), minutes)
-		return HttpResponseRedirect(settings.AUTHENTICATED_USERS_SUCCESS_REDIRECT)
+		return HttpResponseRedirect(reverse('success'))
 	guest_form = forms.AuthorizeGuestForm()
 	guest_form.initial['mac'] = mac
 	guest_form.helper.form_action = reverse('authorize_guest')
@@ -101,7 +101,15 @@ def authorize_guest(request):
 		authorized_until=timezone.now() + timedelta(minutes=minutes)
 	)
 	authorize(mac, minutes)
-	return HttpResponseRedirect(settings.GUESTS_SUCCESS_REDIRECT)
+	return HttpResponseRedirect(reverse('success'))
+
+@require_GET
+def success(request):
+	if request.user.is_authenticated:
+		redirect = settings.AUTHENTICATED_USERS_SUCCESS_REDIRECT
+	else:
+		redirect = settings.GUESTS_SUCCESS_REDIRECT
+	return render(request, 'success.html', {'redirect': redirect})
 
 @login_required
 @require_GET
