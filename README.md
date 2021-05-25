@@ -1,5 +1,7 @@
 # Captive portal
 
+![lint](https://github.com/rrlapointe/captive-portal/workflows/lint/badge.svg)
+
 This is a captive portal that interfaces with the Ubiquiti UniFi Dream Machine Pro to authorize clients on the Wi-Fi. Users sign in via SAML2 SSO and guests enter a password. The guest password rotates daily and can be retrieved by authenticated users for giving to a guest. The site provides a form for authenticated users to authorize devices that are incompatible with captive portals by entering the devices' MAC addresses. The site keeps a log of successful authorizations.
 
 The app is written in Python 3 and uses the Django framework.
