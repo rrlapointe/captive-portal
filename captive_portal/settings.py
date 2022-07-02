@@ -166,7 +166,7 @@ SAML2_AUTH = {
 		'first_name': 'FirstName',
 		'last_name': 'LastName',
 	},
-	'ENTITY_ID': 'https://{}/saml2_auth/acs/'.format(ALLOWED_HOSTS[0]),
+	'ENTITY_ID': f'https://{ALLOWED_HOSTS[0]}/saml2_auth/acs/',
 	'NAME_ID_FORMAT': 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
 	'USE_JWT': False,
 }

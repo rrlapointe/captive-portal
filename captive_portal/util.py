@@ -7,7 +7,7 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 
 def calculate_guest_password():
-	with open('wordlist.txt', 'r') as wordlist_file:
+	with open('wordlist.txt', 'r', encoding='ascii') as wordlist_file:
 		wordlist = wordlist_file.read().splitlines()
 	random = Random(settings.SECRET_KEY + 'guest_password' + str(date.today()))
 	return ' '.join(random.choices(wordlist, k=3))

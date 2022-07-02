@@ -1,6 +1,6 @@
 [FORMAT]
 indent-string = \t
 max-line-length = 120
-disable = bad-continuation, missing-docstring, too-many-ancestors
+disable = missing-docstring, too-many-ancestors
 good-names = pk
 notes = FIXME, XXX
