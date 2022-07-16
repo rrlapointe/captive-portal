@@ -10,6 +10,10 @@ The app is written in Python 3 and uses the Django framework.
 
 The general process of setting up a Django web app for production is outside the scope of this document. This section covers configuration steps that are specific to this app.
 
+You probably want to personalize the captive portal landing page by editing [site_tmpl/landing.html](./site_tmpl/landing.html).
+
+### Environment variables
+
 The app can be configured through environment variables or through a `.env` file. Below is an example `.env` file. You should create a `.env` file similar to the example or set all of the environment variables shown in the example. If you use a `.env` file, you should set the file permissions such that it can be read only by the user that runs the app.
 
 ```
@@ -32,7 +36,9 @@ GUESTS_SUCCESS_REDIRECT=https://example.org/guest/
 REVERSE_PROXY_IP=192.168.0.3
 ```
 
-You probably want to personalize the captive portal landing page by editing [site_tmpl/landing.html](./site_tmpl/landing.html).
+### Installing dependencies
+
+`requirements.txt` contains a list of pinned dependencies that have been tested together and confirmed to work. `setup.py` does not pin dependencies. Installing with `setup.py` (e.g. `pip install .`) is more likely to result in a broken installation than installing with `requirements.txt` (e.g. `pip install -r requirements.txt`), but it is also less likely to install versions with known security vulnerabilities.
 
 ## Development
 
