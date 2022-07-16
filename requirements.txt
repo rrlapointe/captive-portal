@@ -2,9 +2,9 @@ asgiref==3.5.2
 certifi==2022.6.15
 cffi==1.15.1
 charset-normalizer==2.1.0
-cryptography==37.0.2
+cryptography==37.0.4
 defusedxml==0.7.1
-Django==3.2.13
+Django==3.2.14
 django-crispy-forms==1.14.0
 django-environ==0.9.0
 django-macaddress==1.8.0
@@ -29,6 +29,6 @@ six==1.16.0
 sqlparse==0.4.2
 timeago==1.0.15
 typing_extensions==4.3.0
-urllib3==1.26.9
+urllib3==1.26.10
 xmlschema==1.11.3
-zipp==3.8.0
+zipp==3.8.1
