@@ -6,7 +6,7 @@ This is a captive portal that interfaces with the Ubiquiti UniFi Dream Machine P
 
 The app is written in Python 3 and uses the Django framework.
 
-## Usage
+## Production Deployment
 
 The general process of setting up a Django web app for production is outside the scope of this document. This section covers configuration steps that are specific to this app.
 
@@ -42,7 +42,7 @@ REVERSE_PROXY_IP=192.168.0.3
 
 ## Development
 
-To run the app on your local development machine, use the following commands.
+To run the app on your local development machine for the first time, run the following commands in the project root directory.
 
 ```sh
 foo@bar:~/somewhere/captive-portal$ npm install
@@ -50,7 +50,15 @@ foo@bar:~/somewhere/captive-portal$ python3 -m venv venv
 foo@bar:~/somewhere/captive-portal$ . venv/bin/activate
 (venv) foo@bar:~/somewhere/captive-portal$ pip install --upgrade pip
 (venv) foo@bar:~/somewhere/captive-portal$ pip install -e .[dev]
+(venv) foo@bar:~/somewhere/captive-portal$ mkdir runtime
 (venv) foo@bar:~/somewhere/captive-portal$ python manage.py migrate
 (venv) foo@bar:~/somewhere/captive-portal$ python manage.py createsuperuser
+(venv) foo@bar:~/somewhere/captive-portal$ python manage.py runserver
+```
+
+To run the app again, run the following commands in the project root directory.
+
+```sh
+foo@bar:~/somewhere/captive-portal$ . venv/bin/activate
 (venv) foo@bar:~/somewhere/captive-portal$ python manage.py runserver
 ```
