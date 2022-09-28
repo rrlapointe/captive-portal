@@ -22,7 +22,7 @@ setup(
 	author='Ryan LaPointe',
 	author_email='ryan@ryanlapointe.org',
 	install_requires=[
-		'Django',
+		'Django<4.0',
 		'django-environ',
 		'django-crispy-forms',
 		'django-sass-processor',
