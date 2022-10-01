@@ -54,7 +54,7 @@ The password of the local user that you created on the UDM Pro for the captive p
 
 #### PORTAL_TRIGGER_REDIRECT
 
-When an unauthorized device on the LAN attempts to access a website over the UniFi network, the network will redirect it to the captive portal with a query parameter in the URL that tells the captive portal the MAC address of the device. When a user navigates directly to the captive portal without being redirected by the UniFi network, that query paramter is missing.
+When an unauthorized device on the WiFi attempts to access a website, the UniFi network will redirect it to the captive portal with a query parameter in the URL that tells the captive portal the MAC address of the device. When a user navigates directly to the captive portal without being redirected by the UniFi network, that query paramter is missing.
 
 When that query parameter is missing, the captive portal will redirect to the URL specified by the PORTAL_TRIGGER_REDIRECT environment variable in an attempt to trigger the captive portal function of the UniFi network, which will redirect back to the captive portal with the required query parameter.
 
