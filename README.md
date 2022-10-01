@@ -36,6 +36,40 @@ GUESTS_SUCCESS_REDIRECT=https://example.org/guest/
 REVERSE_PROXY_IP=192.168.0.3
 ```
 
+#### UNIFI_URL
+
+The URL of the UDM Pro.
+
+#### UNIFI_SITE_ID
+
+Set to `default`.
+
+#### UNIFI_USERNAME
+
+The username of the local user that you created on the UDM Pro for the captive portal.
+
+#### UNIFI_PASSWORD
+
+The password of the local user that you created on the UDM Pro for the captive portal.
+
+#### PORTAL_TRIGGER_REDIRECT
+
+When an unauthorized device on the LAN attempts to access a website over the UniFi network, the network will redirect it to the captive portal with a query parameter in the URL that tells the captive portal the MAC address of the device. When a user navigates directly to the captive portal without being redirected by the UniFi network, that query paramter is missing.
+
+When that query parameter is missing, the captive portal will redirect to the URL specified by the PORTAL_TRIGGER_REDIRECT environment variable in an attempt to trigger the captive portal function of the UniFi network, which will redirect back to the captive portal with the required query parameter.
+
+#### AUTHENTICATED_USERS_SUCCESS_REDIRECT
+
+The captive portal will redirect to this URL after successfully authorizing a user with SAML.
+
+#### GUESTS_SUCCESS_REDIRECT
+
+The captive portal will redirect to this URL after successfully authorizing a guest with the guest password.
+
+#### REVERSE_PROXY_IP
+
+This is the IP address of the reverse proxy that allows the captive portal to be accessed from outside the LAN. When a request comes from this IP address, the captive portal will not redirect to the PORTAL_TRIGGER_REDIRECT URL.
+
 ### Installing dependencies
 
 [requirements.txt](./requirements.txt) contains a list of pinned dependencies that have been tested together and confirmed to work. [setup.py](./setup.py) does not pin dependencies. Installing with `setup.py` (e.g. `pip install .`) is more likely to result in a broken installation than installing with `requirements.txt` (e.g. `pip install -r requirements.txt`), but it is also less likely to install versions with known security vulnerabilities.
