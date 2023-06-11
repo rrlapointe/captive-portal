@@ -123,7 +123,7 @@ def authorizations_list(request):
 	context = {}
 	context['title'] = 'Access Log'
 	context['authorizations'] = models.Authorization.objects.exclude(
-		authorized_until__lte=now, timestamp__lte=(now - timedelta(days=7)))
+		authorized_until__lte=now, timestamp__lte=now - timedelta(days=7))
 	return render(request, 'authorizations_list.html', context)
 
 @login_required
