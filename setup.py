@@ -25,6 +25,7 @@ setup(
 		'Django<4.0',
 		'django-environ',
 		'django-crispy-forms',
+		'crispy-bootstrap4',
 		'django-sass-processor',
 		'django-macaddress',
 		'timeago',
