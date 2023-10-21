@@ -21,6 +21,7 @@ setup(
 	long_description=README,
 	author='Ryan LaPointe',
 	author_email='ryan@ryanlapointe.org',
+	python_requires='>=3.7.3',
 	install_requires=[
 		'Django<4.0',
 		'django-environ',
