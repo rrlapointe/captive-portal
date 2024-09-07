@@ -6,6 +6,6 @@
 	"author": "Ryan LaPointe <ryan@ryanlapointe.org>",
 	"repository": "github:rrlapointe/captive-portal",
 	"dependencies": {
-		"bootstrap": "4.1.3"
+		"bootstrap": "5.3.3"
 	}
 }

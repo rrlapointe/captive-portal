@@ -23,7 +23,7 @@ setup(
 	author_email='ryan@ryanlapointe.org',
 	python_requires='>=3.7.3',
 	install_requires=[
-		'Django<4.0',
+		'Django',
 		'django-environ',
 		'django-crispy-forms',
 		'crispy-bootstrap4',
@@ -31,7 +31,7 @@ setup(
 		'django-macaddress',
 		'timeago',
 		'django-xff',
-		'django-saml2-auth',
+		'grafana-django-saml2-auth',
 	],
 	extras_require={
 		'dev': [

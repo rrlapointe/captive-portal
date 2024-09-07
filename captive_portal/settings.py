@@ -85,6 +85,14 @@ LOGGING = {
 			'level': 'DEBUG',
 			'handlers': ['console'],
 		},
+		'django_saml2_auth': {
+			'level': 'DEBUG',
+			'handlers': ['console'],
+		},
+		'saml2': {
+			'level': 'DEBUG',
+			'handlers': ['console'],
+		},
 	}
 }
 
@@ -152,6 +160,7 @@ AUTH_PASSWORD_VALIDATORS = [] if DEBUG else [
 ]
 
 SAML2_AUTH = {
+	'DEBUG': DEBUG,
 	'METADATA_AUTO_CONF_URL': ENV.str('SAML2_IDP_METADATA_URL', 'https://samltest.id/saml/idp'),
 	'DEFAULT_NEXT_URL': '/',
 	'CREATE_USER': True,
@@ -170,6 +179,9 @@ SAML2_AUTH = {
 	'ENTITY_ID': f'https://{ALLOWED_HOSTS[0]}/saml2_auth/acs/',
 	'NAME_ID_FORMAT': 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
 	'USE_JWT': False,
+	'AUTHN_REQUESTS_SIGNED': False,
+	'LOGOUT_REQUESTS_SIGNED': False,
+	'TOKEN_REQUIRED': False,
 }
 
 # Internationalization
