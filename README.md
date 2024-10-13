@@ -8,6 +8,11 @@ The app is written in Python 3 and uses the Django framework.
 
 ## Production Deployment
 
+Here are some Django documentation pages that describe ways to set up for production.
+- [Setting up Apache with mod_wsgi](https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/modwsgi/)
+- [Setting up uWSGI, which can be used with nginx, Apache, or other web server](https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/uwsgi/)
+- [Setting up Gunicorn, which can be used with nginx, Apache, or other web server](https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/gunicorn/)
+
 The general process of setting up a Django web app for production is outside the scope of this document. This section covers configuration steps that are specific to this app.
 
 You probably want to personalize the captive portal landing page by editing [site_tmpl/landing.html](./site_tmpl/landing.html).
